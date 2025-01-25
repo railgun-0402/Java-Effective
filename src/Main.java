@@ -6,6 +6,8 @@ public class Main {
         Students students = new Students("Tomo", 55);
         students.lambda();
         students.sort();
-
+        students.builder();
+        students.listChange();
+        students.compute();
     }
 }
