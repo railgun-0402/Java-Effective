@@ -32,10 +32,20 @@ public class Students {
         studentsList.add(new Students("Okada", 70));
         studentsList.add(new Students("Tanimoto", 80));
 
-        System.out.println(studentsList);
+        studentsList.stream()
+                        .filter(student -> student.getScore() > 70)
+                                .forEach(student -> System.out.println(student.getScore()));
 
-        Collections.sort(studentsList, (student1, student2) -> Integer.compare(student1.getScore(), student2.getScore()));
+    }
 
-        System.out.println(studentsList);
+    public void sort() {
+        List<Students> studentsList = new ArrayList<>();
+        studentsList.add(new Students("Murata", 100));
+        studentsList.add(new Students("Okada", 70));
+        studentsList.add(new Students("Tanimoto", 80));
+
+        studentsList.stream()
+                .sorted((student1, student2) -> student2.getScore() - student1.getScore())
+                .forEach(student -> System.out.println(student.getName() + " " + student.getScore()));
     }
 }

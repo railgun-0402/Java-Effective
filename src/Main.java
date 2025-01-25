@@ -1,4 +1,3 @@
-import com.map.SampleMap;
 import stream.Students;
 
 public class Main {
@@ -6,5 +5,7 @@ public class Main {
 
         Students students = new Students("Tomo", 55);
         students.lambda();
+        students.sort();
+
     }
 }
